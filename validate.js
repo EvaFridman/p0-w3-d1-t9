@@ -6,9 +6,9 @@ let promo = null;
 
 let isValid = true;
 
-if (email === true && typeof email === "string" && email.includes("@" )=== true) {
+if (email && typeof email === "string" && email.includes("@" )) {
     console.log("ok");
-} else if (email === false) {
+} else if (!email) {
     console.log("Error! Set your email");
     isValid = false;
 } else if (typeof email !== 'string') {
@@ -42,14 +42,14 @@ if (typeof age === "number" && !isNaN(age) && age >= 14 && age <= 120) {
     isValid = false;
 }
 
-if (typeof agreed === "boolean") {
+if (agreed === true) {
     console.log("ok");
 } else {
     console.log("Error! Agreed has to be a boolean");
     isValid = false;
 }
 
-promo = promo ?? console.log ("без промокода");
+promo ?? console.log ("без промокода");
 
 if (isValid) {
     console.log("Registration allowed!");
